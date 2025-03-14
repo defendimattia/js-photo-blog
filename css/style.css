@@ -38,7 +38,7 @@ h1 {
 
 .container {
     width: calc(640px * 3 + 30px * 2);
-    margin: 1.5rem auto;
+    margin: 5rem auto;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -49,6 +49,7 @@ h1 {
     width: 600px;
     padding: 20px;
     box-shadow: 2px 3px 3px #616161;
+    position: relative;
 }
 
 .card-img {
@@ -65,5 +66,11 @@ h1 {
 
 .card-txt {
     font-family: "Edu TAS Beginner", sans-serif;
+}
+
+#card-pin {
+    position: absolute;
+    top: -10px;
+    left: 50%;
 }
 
