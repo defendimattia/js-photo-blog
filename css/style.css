@@ -37,7 +37,7 @@ h1 {
 /* container and childs */
 
 .container {
-    width: calc(640px * 3 + 30px * 2);
+    width: calc(340px * 3 + 30px * 2);
     margin: 5rem auto;
     display: flex;
     flex-wrap: wrap;
@@ -46,7 +46,7 @@ h1 {
 
 .card {
     box-sizing: content-box;
-    width: 600px;
+    width: 300px;
     padding: 20px;
     box-shadow: 2px 3px 3px #616161;
     position: relative;
@@ -54,8 +54,8 @@ h1 {
 }
 
 .card-img {
-    width: 600px;
-    height: 600px;
+    width: 300px;
+    height: 300px;
     margin-bottom: 20px;
 }
 
@@ -81,25 +81,15 @@ h1 {
 
 
 /* tablet */
-@media (max-width: 2000px) {
+@media (max-width: 1090px) {
     .container {
         width: calc(340px * 2 + 15px);
         gap: 15px;
-    }
-
-    .card {
-        width: 300px;
-    }
-
-    .card-img {
-        width: 300px;
-        height: 300px;
-    }
-    
+    }    
 }
 
 /* phone*/
-@media (max-width: 740px) {
+@media (max-width: 700px) {
     .container {
         width: 100%;
         justify-content: center;
