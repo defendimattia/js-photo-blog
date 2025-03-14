@@ -75,3 +75,34 @@ h1 {
     left: 50%;
 }
 
+/***
+/* media queries */
+/***
+
+
+/* tablet */
+@media (max-width: 2000px) {
+    .container {
+        width: calc(340px * 2 + 15px);
+        gap: 15px;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .card-img {
+        width: 300px;
+        height: 300px;
+    }
+    
+}
+
+/* phone*/
+@media (max-width: 740px) {
+    .container {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
