@@ -51,6 +51,7 @@ h1 {
     box-sizing: content-box;
     width: 600px;
     padding: 20px;
+    box-shadow: 2px 3px 3px #616161;
 }
 
 .card-img {
