@@ -1,14 +1,36 @@
-const imgArray = []
 
 const source = "https://lanciweb.github.io/demo/api/pictures/"
 
-// chiamo API e per ogni oggetto contenuto nell'array di oggetti, vado a prendere la chiave "url" e pusho il valore in "imgArray"
+const cardsImgElement = document.querySelectorAll('.card-img');
+
+
+
 axios.get(source)
     .then(response => {
-        const callData = response.data
-        callData.forEach(obj => {
-            imgArray.push(obj.url)
-        });
 
+        // array che contiene gli oggetti presi dall'API
+        const objArray = response.data
+
+        // iterazione su ogni oggetto dell'array
+        objArray.forEach(obj => {
+
+            // definisco una costante che contiene un elemento img da inserire nel DOM
+            const imgElement = document.createElement('img')
+
+            // inserisco l'url corrispondente dell'oggetto nel src dell'elemento immagine appena creato
+            imgElement.src = obj.url
+
+            // calcolo l'indice dell'elemento in cui inserire l'immagine
+            const indexCardsImgElement = obj.id - 1
+
+            // svuoto il contenuto precedente dell'elemento .card-img selezionato con indexCardsImgElement
+            cardsImgElement[indexCardsImgElement].innerHTML = ""
+
+            // Aggiungo l'elemento <img> appena creato come figlio dell'elemento .card-img corrispondente
+            cardsImgElement[indexCardsImgElement].appendChild(imgElement)
+        });
     })
+
+
+
 
