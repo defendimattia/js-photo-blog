@@ -50,6 +50,7 @@ h1 {
     padding: 20px;
     box-shadow: 2px 3px 3px #616161;
     position: relative;
+    background-color: #ffffff;
 }
 
 .card-img {
