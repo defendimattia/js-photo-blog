@@ -57,13 +57,9 @@ const buttonElement = document.querySelector("button")
 const overlayElement = document.getElementById("overlay-container")
 const overlayImgElement = document.getElementById("overlay-img")
 
-buttonElement.addEventListener("click", () => {
-    overlayElement.classList.add("hidden")
 
-    // aggiunge scrollbar
-    document.body.style.overflow = 'visible'
-})
 
+// click sull'immagine
 cardsElements.forEach((card) => {
     card.addEventListener("click", () => {
 
@@ -76,5 +72,31 @@ cardsElements.forEach((card) => {
 
         // modifica l'attributo src dell'immagine nell'overlay con l'src dell'immagine della card cliccata
         overlayImgElement.src = imgElement.src;
+    })
+})
+
+
+
+// click bottone "chiudi"
+buttonElement.addEventListener("click", () => {
+    overlayElement.classList.add("hidden")
+
+    // aggiunge scrollbar
+    document.body.style.overflow = 'visible'
+})
+
+
+
+// animazione card
+
+cardsElements.forEach((card) => {
+    card.addEventListener("mouseover", () => {
+        card.classList.add("animation")
+    })
+})
+
+cardsElements.forEach((card) => {
+    card.addEventListener("mouseleave", () => {
+        card.classList.remove("animation")
     })
 })
