@@ -19,6 +19,10 @@ img {
     display: block;
 }
 
+button {
+    padding: 5px;
+}
+
 
 /* body */
 
@@ -54,6 +58,7 @@ h1 {
 
 #overlay-container img {
     margin: 30px auto;
+    width: 30vw;
 }
 
 
@@ -112,7 +117,7 @@ h1 {
     .container {
         width: calc(340px * 2 + 15px);
         gap: 15px;
-    }    
+    }
 }
 
 /* phone*/
@@ -122,4 +127,3 @@ h1 {
         justify-content: center;
     }
 }
-

@@ -14,19 +14,19 @@ axios.get(source)
         pictures.forEach(picture => {
 
             // definisco una costante che contiene un elemento img da inserire nel DOM
-            const imgElement = document.createElement('img')
+            const createImgElement = document.createElement('img')
 
             // inserisco l'url corrispondente dell'oggetto nel src dell'elemento immagine appena creato
-            imgElement.src = picture.url
+            createImgElement.src = picture.url
 
             // calcolo l'indice dell'elemento in cui inserire l'immagine
-            const imageIndex = picture.id - 1
+            const imgIndex = picture.id - 1
 
             // svuoto il contenuto precedente dell'elemento .card-img selezionato con imageIndex
-            cardsImgElements[imageIndex].innerHTML = ""
+            cardsImgElements[imgIndex].innerHTML = ""
 
             // Aggiungo l'elemento <img> appena creato come figlio dell'elemento .card-img corrispondente
-            cardsImgElements[imageIndex].appendChild(imgElement)
+            cardsImgElements[imgIndex].appendChild(createImgElement)
         });
     })
 
@@ -35,12 +35,22 @@ axios.get(source)
 const buttonElement = document.querySelector("button")
 const overlayElement = document.getElementById("overlay-container")
 const cardsElements = document.querySelectorAll('.card')
+const overlayImgElement = document.getElementById("overlay-img")
 
 
-buttonElement.addEventListener("click", () => {overlayElement.classList.add("hidden")} )
+
+buttonElement.addEventListener("click", () => { overlayElement.classList.add("hidden") })
 
 cardsElements.forEach((card) => {
-    card.addEventListener("click", () => {overlayElement.classList.remove("hidden")} )
+    card.addEventListener("click", () => {
+
+        overlayElement.classList.remove("hidden")
+
+        const imgElement = card.querySelector('.card-img img')
+
+        // Modifica l'attributo src dell'immagine nell'overlay con l'src dell'immagine della card cliccata
+        overlayImgElement.src = imgElement.src
+    })
 })
 
 
