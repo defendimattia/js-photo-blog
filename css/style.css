@@ -89,14 +89,16 @@ h1 {
     margin-bottom: 20px;
 }
 
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.card-date {
+    font-family: "Sometype Mono", monospace;
 }
 
-.card-txt {
+.card-title {
+    font-size: 2rem;
     font-family: "Edu TAS Beginner", sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
 }
 
 #card-pin {

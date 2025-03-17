@@ -1,58 +1,74 @@
-
 const source = "https://lanciweb.github.io/demo/api/pictures/"
 
-const cardsImgElements = document.querySelectorAll('.card-img')
-
+const cardsElements = document.querySelectorAll('.card')
 
 axios.get(source)
     .then(response => {
 
-        // array che contiene gli oggetti presi dall'API
-        const pictures = response.data
+        // array di oggetti presi dall'api
+        const cards = response.data
 
-        // iterazione su ogni oggetto dell'array
-        pictures.forEach(picture => {
+        cards.forEach(card => {
 
-            // definisco una costante che contiene un elemento img da inserire nel DOM
+            // crea un elemento <img> da inserire nel DOM
             const createImgElement = document.createElement('img')
 
-            // inserisco l'url corrispondente dell'oggetto nel src dell'elemento immagine appena creato
-            createImgElement.src = picture.url
+            // imposta l'url dell'immagine nell'attributo src dell'elemento <img>
+            createImgElement.src = card.url
 
-            // calcolo l'indice dell'elemento in cui inserire l'immagine
-            const imgIndex = picture.id - 1
+            // imposta l'id "card-img" all'immagine
+            createImgElement.classList.add('card-img')
 
-            // svuoto il contenuto precedente dell'elemento .card-img selezionato con imageIndex
-            cardsImgElements[imgIndex].innerHTML = ""
+            // crea un <div> per la data
+            const newDate = document.createElement('div')
 
-            // Aggiungo l'elemento <img> appena creato come figlio dell'elemento .card-img corrispondente
-            cardsImgElements[imgIndex].appendChild(createImgElement)
+            // crea un <div> per il titolo
+            const newTitle = document.createElement('div')
+
+            // aggiungi la classe 'card-date' al div della data
+            newDate.classList.add('card-date')
+
+            // aggiungi la classe 'card-title' al div del titolo
+            newTitle.classList.add('card-title')
+
+            // imposta il testo della data nel div corrispondente
+            newDate.innerText = card.date
+
+            // imposta il testo del titolo nel div corrispondente
+            newTitle.innerText = card.title
+
+            // calcola l'indice dell'elemento in cui inserire l'immagine (considerando l'id dell'oggetto)
+            const cardElement = cardsElements[card.id - 1]  // Seleziona la card corretta
+
+            // aggiungi l'elemento <img> all'interno della card
+            cardElement.appendChild(createImgElement)
+
+            // aggiungi il div con la data all'interno dell'elemento .card
+            cardElement.appendChild(newDate)
+
+            // aggiungi il div con il titolo all'interno dell'elemento .card
+            cardElement.appendChild(newTitle)
         });
-    })
+    });
 
 // overlay
 
 const buttonElement = document.querySelector("button")
 const overlayElement = document.getElementById("overlay-container")
-const cardsElements = document.querySelectorAll('.card')
 const overlayImgElement = document.getElementById("overlay-img")
 
-
-
-buttonElement.addEventListener("click", () => { overlayElement.classList.add("hidden") })
+buttonElement.addEventListener("click", () => {
+    overlayElement.classList.add("hidden")
+})
 
 cardsElements.forEach((card) => {
     card.addEventListener("click", () => {
 
         overlayElement.classList.remove("hidden")
 
-        const imgElement = card.querySelector('.card-img img')
+        const imgElement = card.querySelector('.card-img')
 
-        // Modifica l'attributo src dell'immagine nell'overlay con l'src dell'immagine della card cliccata
-        overlayImgElement.src = imgElement.src
+        // modifica l'attributo src dell'immagine nell'overlay con l'src dell'immagine della card cliccata
+        overlayImgElement.src = imgElement.src;
     })
 })
-
-
-
-
