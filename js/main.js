@@ -59,12 +59,18 @@ const overlayImgElement = document.getElementById("overlay-img")
 
 buttonElement.addEventListener("click", () => {
     overlayElement.classList.add("hidden")
+
+    // aggiunge scrollbar
+    document.body.style.overflow = 'visible'
 })
 
 cardsElements.forEach((card) => {
     card.addEventListener("click", () => {
 
         overlayElement.classList.remove("hidden")
+
+        // rimuove scrollbar
+        document.body.style.overflow = "hidden"
 
         const imgElement = card.querySelector('.card-img')
 
