@@ -11,6 +11,10 @@
     background-color: white;
 }
 
+.hidden {
+    display: none;
+}
+
 img {
     display: block;
 }
@@ -33,6 +37,16 @@ h1 {
     padding: 1.5rem 0;
 }
 
+#overlay-container {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 75%;
+}
+
 
 /* container and childs */
 
@@ -51,6 +65,7 @@ h1 {
     box-shadow: 2px 3px 3px #616161;
     position: relative;
     background-color: #ffffff;
+    cursor: pointer;
 }
 
 .card-img {
@@ -75,6 +90,7 @@ h1 {
     left: 50%;
     translate: -50% 0;
 }
+
 
 /***
 /* media queries */

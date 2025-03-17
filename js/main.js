@@ -1,8 +1,7 @@
 
 const source = "https://lanciweb.github.io/demo/api/pictures/"
 
-const cardsImgElements = document.querySelectorAll('.card-img');
-
+const cardsImgElements = document.querySelectorAll('.card-img')
 
 
 axios.get(source)
@@ -30,6 +29,19 @@ axios.get(source)
             cardsImgElements[imageIndex].appendChild(imgElement)
         });
     })
+
+// overlay
+
+const buttonElement = document.querySelector("button")
+const overlayElement = document.getElementById("overlay-container")
+const cardsElements = document.querySelectorAll('.card')
+
+
+buttonElement.addEventListener("click", () => {overlayElement.classList.add("hidden")} )
+
+cardsElements.forEach((card) => {
+    card.addEventListener("click", () => {overlayElement.classList.remove("hidden")} )
+})
 
 
 
