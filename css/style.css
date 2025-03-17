@@ -49,6 +49,7 @@ h1 {
     top: 0;
     left: 0;
     text-align: center;
+    z-index: 2;
 }
 
 #overlay-container button {
@@ -81,6 +82,7 @@ h1 {
     position: relative;
     background-color: #ffffff;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .card-img {
@@ -109,11 +111,9 @@ h1 {
 }
 
 .animation {
-    transform: rotate(20deg);
-    scale: 1.1;
-    z-index: 1;
+    transform: rotate(10deg) scale(1.1);
     box-shadow: 6px 6px 6px #616161;
-    transition: 0.5s;
+    z-index: 1;
 }
 
 
