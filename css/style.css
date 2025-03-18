@@ -110,7 +110,7 @@ h1 {
     translate: -50% 0;
 }
 
-.animation {
+.card:hover {
     transform: rotate(10deg) scale(1.1);
     box-shadow: 6px 6px 6px #616161;
     z-index: 1;

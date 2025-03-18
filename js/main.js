@@ -86,24 +86,3 @@ buttonElement.addEventListener("click", () => {
 })
 
 
-
-// animazione card
-cardsElements.forEach((card) => {
-
-    const pinElement = card.querySelector('.card-pin')
-
-    card.addEventListener("mouseover", () => {
-        card.classList.add("animation")
-        pinElement.classList.add("hidden")
-    })
-})
-
-cardsElements.forEach((card) => {
-
-    const pinElement = card.querySelector('.card-pin')
-
-    card.addEventListener("mouseleave", () => {
-        card.classList.remove("animation")
-        pinElement.classList.remove("hidden")
-    })
-})
