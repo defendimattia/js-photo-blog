@@ -48,8 +48,10 @@ axios.get(source)
 
             // aggiungi il div con il titolo all'interno dell'elemento .card
             cardElement.appendChild(newTitle)
-        });
-    });
+        })
+    })
+    .catch(error => { console.error(error)})
+    
 
 // overlay
 
