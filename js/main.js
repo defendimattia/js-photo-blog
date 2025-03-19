@@ -50,8 +50,8 @@ axios.get(source)
             cardElement.appendChild(newTitle)
         })
     })
-    .catch(error => { console.error(error)})
-    
+    .catch(error => { console.error(error) })
+
 
 // overlay
 
@@ -88,3 +88,25 @@ buttonElement.addEventListener("click", () => {
 })
 
 
+
+// animazione pin
+cardsElements.forEach((card) => {
+
+    const pinElement = card.querySelector('.card-pin')
+
+    card.addEventListener("mouseover", () => {
+        pinElement.classList.add("hidden")
+
+    })
+})
+
+cardsElements.forEach((card) => {
+
+    const pinElement = card.querySelector('.card-pin')
+
+    card.addEventListener("mouseleave", () => {
+
+        pinElement.classList.remove("hidden")
+
+    })
+})
