@@ -67,7 +67,7 @@ h1 {
 /* container and childs */
 
 .container {
-    width: calc(340px * 3 + 30px * 2);
+    width: calc(300px * 3 + 30px * 2);
     margin: 5rem auto;
     display: flex;
     flex-wrap: wrap;
@@ -123,7 +123,7 @@ h1 {
 /* tablet */
 @media (max-width: 1090px) {
     .container {
-        width: calc(340px * 2 + 15px);
+        width: calc(300px * 2 + 15px);
         gap: 15px;
     }
 }
