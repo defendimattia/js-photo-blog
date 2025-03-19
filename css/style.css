@@ -75,7 +75,6 @@ h1 {
 }
 
 .card {
-    box-sizing: content-box;
     width: 300px;
     padding: 20px;
     box-shadow: 2px 3px 3px #616161;
@@ -86,8 +85,7 @@ h1 {
 }
 
 .card-img {
-    width: 300px;
-    height: 300px;
+    width: 100%;
     margin-bottom: 20px;
 }
 
