@@ -16,7 +16,7 @@ axios.get(source)
             // imposta l'url dell'immagine nell'attributo src dell'elemento <img>
             createImgElement.src = card.url
 
-            // imposta l'id "card-img" all'immagine
+            // imposta la classe "card-img" all'immagine
             createImgElement.classList.add('card-img')
 
             // crea un <div> per la data
@@ -25,10 +25,10 @@ axios.get(source)
             // crea un <div> per il titolo
             const newTitle = document.createElement('div')
 
-            // aggiungi la classe 'card-date' al div della data
+            // aggiungi la classe "card-date" al div della data
             newDate.classList.add('card-date')
 
-            // aggiungi la classe 'card-title' al div del titolo
+            // aggiungi la classe "card-title" al div del titolo
             newTitle.classList.add('card-title')
 
             // imposta il testo della data nel div corrispondente
@@ -38,7 +38,7 @@ axios.get(source)
             newTitle.innerText = card.title
 
             // calcola l'indice dell'elemento in cui inserire l'immagine (considerando l'id dell'oggetto)
-            const cardElement = cardsElements[card.id - 1]  // Seleziona la card corretta
+            const cardElement = cardsElements[card.id - 1]
 
             // aggiungi l'elemento <img> all'interno della card
             cardElement.appendChild(createImgElement)
@@ -53,8 +53,8 @@ axios.get(source)
     .catch(error => { console.error(error) })
 
 
-// overlay
 
+// overlay
 const buttonElement = document.querySelector("button")
 const overlayElement = document.getElementById("overlay-container")
 const overlayImgElement = document.getElementById("overlay-img")

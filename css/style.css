@@ -19,9 +19,6 @@ img {
     display: block;
 }
 
-button {
-    padding: 5px;
-}
 
 
 /* body */
@@ -55,6 +52,7 @@ h1 {
 #overlay-container button {
     margin-top: 100px;
     cursor: pointer;
+    padding: 5px;
 }
 
 #overlay-container img {
@@ -67,7 +65,7 @@ h1 {
 /* container and childs */
 
 .container {
-    width: calc(300px * 3 + 30px * 2);
+    width: calc((300px * 3) + (30px * 2));
     margin: 5rem auto;
     display: flex;
     flex-wrap: wrap;
